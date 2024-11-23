@@ -4,6 +4,8 @@
  */
 
 #define DT_DRV_COMPAT zmk_led_strip_composite
+// HACK: This is a workaround for priority issue
+#define CONFIG_LED_STRIP_INIT_PRIORITY 90
 
 #include <zephyr/kernel.h>
 #include <zephyr/device.h>
