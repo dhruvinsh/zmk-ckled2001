@@ -1,0 +1,18 @@
+DT_COMPAT_ZMK_CKLED2001 := zmk,ckled2001
+
+config CKLED2001
+	bool "CKLED2001 LED strip controller"
+	default y
+	depends on DT_HAS_ZMK_CKLED2001_ENABLED
+	select I2C
+	select LED_STRIP
+	help
+	  Enable driver for CKLED2001 LED strip controller.
+
+DT_COMPAT_ZMK_LED_STRIP_COMPOSITE := zmk,led-strip-composite
+
+config LED_STRIP_COMPOSITE
+	bool "Composing multiple LED strip devices into one virtual device"
+	default y
+	depends on DT_HAS_ZMK_LED_STRIP_COMPOSITE_ENABLED
+	select LED_STRIP
